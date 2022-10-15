@@ -1,4 +1,5 @@
-var argButtonName, buttonPaper, buttonRock, buttonScissors, buttonTest;
+var argButtonName, buttonPaper, buttonRock, buttonScissors;
+var playerScore = 0, computerScore = 0;
 
 /**
  * Describe this function...
@@ -57,22 +58,22 @@ function displayResult(argPlayerMove, argComputerMove) {
   );
   if (argPlayerMove == "papier" && argComputerMove == "kamień") {
     printMessage("Wygrywasz!");
+    incrementScore("player")
   } else if (argPlayerMove == "kamień" && argComputerMove == "nożyce") {
     printMessage("Wygrywasz!");
+    incrementScore("player")
   } else if (argPlayerMove == "nożyce" && argComputerMove == "papier") {
     printMessage("Wygrywasz!");
+    incrementScore("player")
   } else if (argPlayerMove == argComputerMove) {
     printMessage("Remis");
   } else {
     printMessage("Przegrywasz :(");
+    incrementScore("computer")
   }
   printMessage("Zagrałem " + argComputerMove + ", a Ty " + argPlayerMove);
 }
 
-buttonTest = document.getElementById("button-test");
-buttonTest.addEventListener("click", function () {
-  buttonClicked("Test button");
-});
 buttonRock = document.getElementById("button-rock");
 buttonRock.addEventListener("click", function () {
   buttonClicked("paper");
@@ -85,3 +86,13 @@ buttonScissors = document.getElementById("button-scissors");
 buttonScissors.addEventListener("click", function () {
   buttonClicked("nożyce");
 });
+
+function incrementScore(scoreType) {
+  if (scoreType=="player") {
+    playerScore++;
+    printScore("playerScore", playerScore)
+  } else {
+    computerScore++;
+    printScore("computerScore", computerScore)
+  }
+}

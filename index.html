@@ -3,16 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <title>Kamień, papier, nożyce</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <header>
+      <div class="container">
+        <h1 class="page-title">Rock, paper, scissors</h1>
+        <h2 class="page-subtitle">PLAY</h2>
+        <i class="fa-solid fa-caret-down"></i>
+      </div>
+    </header>
     <div class="container">
       <div id="buttons">
-        <button id="button-rock">Kamień</button>
-        <button id="button-paper">Papier</button>
-        <button id="button-scissors">Nożyce</button>
-        <button id="button-test">guzik test</button>
+        <button id="button-rock">
+          <img src="/images/icon-rock.png" alt="" /><br />
+          Rock
+        </button>
+        <button id="button-paper">
+          <img src="/images/icon-paper.png" alt="" /><br />
+          Paper
+        </button>
+        <button id="button-scissors">
+          <img src="/images/icon-scissors.png" alt="" /><br />
+          Scissors
+        </button>
       </div>
-      <div id="messages"></div>
+      <div id="messages">Choose one to start the game!</div>
+      <div id="result">
+        <div class="playerMove">
+          <h2>Player</h2>
+          <p id="playerScore">0</p>
+        </div>
+        <div class="computerMove">
+          <h2>Computer</h2>
+          <p id="computerScore">0</p>
+        </div>
+      </div>
     </div>
     <script src="js/functions.js"></script>
     <script src="js/script.js"></script>
