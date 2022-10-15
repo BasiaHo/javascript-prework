@@ -76,9 +76,9 @@ function displayResult(argPlayerMove, argComputerMove) {
 
 buttonRock = document.getElementById("button-rock");
 buttonRock.addEventListener("click", function () {
-  buttonClicked("paper");
+  buttonClicked("kamień");
 });
-buttonPaper = document.getElementById("button-paper");
+buttonPaper = document.getElementById("button-paper"); 
 buttonPaper.addEventListener("click", function () {
   buttonClicked("papier");
 });
