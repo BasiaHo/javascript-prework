@@ -1,4 +1,5 @@
-let playerScore = 0, computerScore = 0;
+let playerScore = 0,
+  computerScore = 0;
 
 /**
  * Describe this function...
@@ -45,20 +46,17 @@ function displayResult(argPlayerMove, argComputerMove) {
       ", " +
       argComputerMove
   );
-  if (argPlayerMove == "papier" && argComputerMove == "kamień") {
+  if (
+    (argPlayerMove == "papier" && argComputerMove == "kamień") ||
+    (argPlayerMove == "kamień" && argComputerMove == "nożyce") ||
+    (argPlayerMove == "nożyce" && argComputerMove == "papier")
+  ) {
     printMessage("Wygrywasz!");
-    incrementScore("player")
-  } else if (argPlayerMove == "kamień" && argComputerMove == "nożyce") {
-    printMessage("Wygrywasz!");
-    incrementScore("player")
-  } else if (argPlayerMove == "nożyce" && argComputerMove == "papier") {
-    printMessage("Wygrywasz!");
-    incrementScore("player")
   } else if (argPlayerMove == argComputerMove) {
     printMessage("Remis");
   } else {
     printMessage("Przegrywasz :(");
-    incrementScore("computer")
+    incrementScore("computer");
   }
   printMessage("Zagrałem " + argComputerMove + ", a Ty " + argPlayerMove);
 }
@@ -67,7 +65,7 @@ const buttonRock = document.getElementById("button-rock");
 buttonRock.addEventListener("click", function () {
   buttonClicked("kamień");
 });
-const buttonPaper = document.getElementById("button-paper"); 
+const buttonPaper = document.getElementById("button-paper");
 buttonPaper.addEventListener("click", function () {
   buttonClicked("papier");
 });
@@ -77,11 +75,11 @@ buttonScissors.addEventListener("click", function () {
 });
 
 function incrementScore(scoreType) {
-  if (scoreType=="player") {
+  if (scoreType == "player") {
     playerScore++;
-    printScore("playerScore", playerScore)
+    printScore("playerScore", playerScore);
   } else {
     computerScore++;
-    printScore("computerScore", computerScore)
+    printScore("computerScore", computerScore);
   }
 }
